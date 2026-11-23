@@ -1,0 +1,1689 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CreativeFolio | Have an idea, create it.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f8f6ef;
+  --paper: #f1eee4;
+  --green: #244d3b;
+  --dark: #19382b;
+  --sage: #dce5d9;
+  --muted: #777b70;
+  --white: #ffffff;
+  --line: #e4e3d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+}
+
+img { display: block; max-width: 100%; }
+
+a { text-decoration: none; color: inherit; }
+
+button { font-family: inherit; cursor: pointer; }
+
+/* NAVIGATION */
+
+.navbar {
+  width: 100%;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgba(248, 246, 239, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(36, 77, 59, 0.08);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: -0.6px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: #536157;
+  transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--green); }
+
+.nav-contact {
+  padding: 11px 22px;
+  border-radius: 50px;
+  background: var(--green);
+  color: white !important;
+}
+
+/* HOME */
+
+.hero { padding: 65px 8% 85px; }
+
+.hero-container {
+  min-height: 480px;
+  background: #e9eee5;
+  border-radius: 35px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  overflow: hidden;
+  padding: 55px 65px;
+  gap: 35px;
+}
+
+.hero-text { max-width: 560px; }
+
+.hero-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(66px, 7vw, 100px);
+  line-height: 0.95;
+  font-weight: 700;
+  color: #244d3b;
+  letter-spacing: -3px;
+  white-space: nowrap;
+}
+
+.hero-motto {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 27px;
+  line-height: 1.2;
+  color: #758875;
+  margin-top: 18px;
+}
+
+.hero-divider {
+  width: 65px;
+  height: 1px;
+  background: #b7c5b4;
+  margin: 25px 0;
+}
+
+.hero-new h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.4vw, 46px);
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 17px;
+  letter-spacing: -1px;
+}
+
+.hero-new h1 span { color: #849782; font-style: italic; }
+
+.hero-description {
+  font-size: 14px;
+  line-height: 2;
+  color: #667266;
+  max-width: 440px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+  border: 1px solid var(--green);
+}
+
+.btn-primary:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid #a9b9a9;
+  color: var(--green);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.hero-note {
+  margin-top: 30px;
+  color: #7e897c;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hero-note span {
+  color: #78917b;
+  font-size: 17px;
+  margin-right: 7px;
+}
+
+/* HOME IMAGE */
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-new-image { position: relative; display: block; width: 100%; }
+
+.hero-poster {
+  width: 100%;
+  max-width: 440px;
+  height: 440px;
+  margin: auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(36, 77, 59, 0.12);
+  background: #f5f0e5;
+}
+
+.hero-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-caption {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #758274;
+}
+
+/* GENERAL SECTIONS */
+
+.section { padding: 85px 8%; }
+
+.section-heading { margin-bottom: 38px; }
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #809080;
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+/* POSTER CATEGORIES */
+
+.poster-section { padding-top: 55px; }
+
+.category-scroll {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.category-card {
+  border: none;
+  background: transparent;
+  text-align: left;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.category-cover {
+  width: 100%;
+  aspect-ratio: 1 / 0.92;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #e6e9df;
+  position: relative;
+  margin-bottom: 15px;
+  padding: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover .category-cover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(36, 77, 59, 0.12);
+}
+
+.cover-single {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.cover-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.cover-two img { width: 100%; height: 100%; object-fit: cover; }
+
+.cover-four {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.cover-four img { width: 100%; height: 100%; object-fit: cover; }
+
+/* THREE-POSTER COVER */
+
+.cover-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.cover-three img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-three img:nth-child(3) { grid-column: 1 / -1; }
+
+.cover-empty {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background: #dce5d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-empty::before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  border: 1px solid rgba(36, 77, 59, 0.16);
+  border-radius: 50%;
+}
+
+.cover-empty::after {
+  content: "CREATIVEFOLIO";
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #244d3b;
+}
+
+.category-title { font-size: 14px; font-weight: 600; color: var(--green); }
+
+.category-subtitle { font-size: 11px; color: #8b9085; margin-top: 5px; }
+
+/* POSTER GALLERY */
+
+.poster-gallery-area { margin-top: 60px; display: none; }
+
+.poster-gallery-area.active { display: block; }
+
+.gallery-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.gallery-top h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.close-gallery {
+  border: 1px solid #cbd4c7;
+  color: var(--green);
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+/* POSTER GRID */
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.poster-item {
+  background: #eeece4;
+  border-radius: 22px;
+  padding: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.poster-item:hover { transform: translateY(-4px); }
+
+.poster-item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #e5e2d8;
+  border-radius: 14px;
+}
+
+.poster-caption { padding: 15px 5px 7px; font-size: 13px; font-weight: 500; }
+
+/* WEBSITE CREATIONS */
+
+.website-section {
+  background: #eeeee6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 35px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(25, 56, 43, 0.07);
+}
+
+.service-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.service-number {
+  font-size: 11px;
+  color: #8b9487;
+  letter-spacing: 1.5px;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  font-size: 20px;
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  font-weight: 500;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #777e73;
+  margin-bottom: 24px;
+}
+
+.service-features {
+  list-style: none;
+  margin: 0 0 25px;
+}
+
+.service-features li {
+  font-size: 12px;
+  color: #687468;
+  padding: 8px 0;
+  border-bottom: 1px solid #e6e7df;
+}
+
+.service-features li::before {
+  content: "✓";
+  color: var(--green);
+  margin-right: 10px;
+}
+
+.service-card .service-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green);
+  color: white;
+  border-radius: 50px;
+  padding: 13px 22px;
+  font-size: 12px;
+  border: 1px solid var(--green);
+  transition: 0.25s;
+}
+
+.service-card .service-whatsapp:hover {
+  background: #19382b;
+  transform: translateY(-2px);
+}
+
+/* ABOUT */
+
+.about-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-decoration {
+  background: #e5ebe1;
+  border-radius: 30px;
+  min-height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  text-align: center;
+}
+
+.about-decoration p {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  line-height: 1.35;
+  color: var(--green);
+}
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 43px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  font-size: 14px;
+  line-height: 2;
+  color: #71796f;
+  margin-bottom: 15px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background: var(--green);
+  color: var(--cream);
+  text-align: center;
+  padding: 85px 8%;
+}
+
+.contact-section .section-label { color: #c2d1c2; }
+
+.contact-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 55px);
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.contact-section p {
+  color: #d1ddd1;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto 28px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.contact-buttons .btn-primary {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--green);
+}
+
+.contact-buttons .btn-outline {
+  border-color: #c1d2c3;
+  color: white;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 27px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  background: var(--cream);
+}
+
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; }
+
+.footer p { font-size: 11px; color: #858b80; }
+
+.footer-instagram { font-size: 12px; color: var(--green); }
+
+/* =========================================
+   WHATSAPP CONTACT SYSTEM
+========================================= */
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 23px;
+  border-radius: 50px;
+  background: #25D366;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #25D366;
+  transition: 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background: #1eae54;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.20);
+}
+
+.whatsapp-button svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.hero-whatsapp {
+  margin-top: 12px;
+}
+
+.contact-whatsapp {
+  background: #25D366 !important;
+  border: 1px solid #25D366 !important;
+  color: white !important;
+}
+
+/* FLOATING WHATSAPP BUTTON */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.whatsapp-float-label {
+  background: #ffffff;
+  color: #244d3b;
+  padding: 11px 17px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(25, 56, 43, 0.12);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.whatsapp-float:hover .whatsapp-float-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.whatsapp-float-button {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.30);
+  transition: 0.3s ease;
+}
+
+.whatsapp-float-button:hover {
+  transform: scale(1.08);
+  background: #1eae54;
+}
+
+.whatsapp-float-button svg {
+  width: 29px;
+  height: 29px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 25, 18, 0.92);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox img {
+  max-height: 90vh;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 35px;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .navbar { padding: 18px 5%; }
+  .logo { font-size: 22px; }
+  .nav-links { gap: 15px; }
+  .nav-links a { font-size: 11px; }
+  .nav-contact { display: none; }
+
+  .hero { padding: 35px 5%; }
+
+  .hero-container {
+    padding: 38px;
+    grid-template-columns: 1fr 0.85fr;
+    min-height: 390px;
+    gap: 20px;
+  }
+
+  .hero-brand-name { font-size: clamp(56px, 8vw, 75px); }
+  .hero-motto { font-size: 25px; }
+  .hero-poster { height: 350px; }
+
+  .section { padding: 65px 5%; }
+
+  .category-scroll {
+    grid-template-columns: repeat(5, 150px);
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    gap: 14px;
+  }
+
+  .poster-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .services-grid { gap: 16px; }
+  .service-card { padding: 27px; }
+  .about-section { gap: 35px; }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .nav-links a { font-size: 10px; }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    padding: 30px 25px;
+    border-radius: 25px;
+  }
+
+  .hero-brand-name {
+    font-size: 59px;
+    white-space: nowrap;
+    letter-spacing: -2px;
+  }
+
+  .hero-motto {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-top: 17px;
+  }
+
+  .hero-divider { margin: 24px 0; }
+
+  .hero-new h1 { font-size: 38px; }
+
+  .hero-description { font-size: 13px; }
+
+  .hero-poster { height: 300px; }
+
+  .hero-note { margin-top: 25px; }
+
+  .category-scroll {
+    grid-template-columns: repeat(5, 130px);
+    gap: 12px;
+  }
+
+  .category-cover {
+    border-radius: 19px;
+    padding: 6px;
+  }
+
+  .cover-single, .cover-two, .cover-three, .cover-four, .cover-empty {
+    border-radius: 14px;
+  }
+
+  .category-title { font-size: 12px; }
+
+  .poster-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .poster-item {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .poster-item img { aspect-ratio: 3 / 4; }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .service-card { padding: 25px; }
+
+  .service-card h3 { font-size: 26px; }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-decoration { min-height: 240px; }
+
+  .about-decoration p { font-size: 32px; }
+
+  .about-text h2 { font-size: 36px; }
+
+  .gallery-top h3 { font-size: 22px; }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* MOBILE FLOATING WHATSAPP */
+
+  .whatsapp-float {
+    right: 17px;
+    bottom: 18px;
+  }
+
+  .whatsapp-float-label { display: none; }
+
+  .whatsapp-float-button {
+    width: 54px;
+    height: 54px;
+  }
+
+  .hero-whatsapp {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+  <a href="#home" class="logo">CreativeFolio</a>
+
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#posters">Posters</a>
+    <a href="#websites">Websites</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+  <div class="hero-container hero-new">
+
+    <div class="hero-text">
+
+      <div class="hero-brand-name">CreativeFolio</div>
+
+      <p class="hero-motto">“Have an idea, create it.”</p>
+
+      <div class="hero-divider"></div>
+
+      <h1>Ideas into <span>design.</span></h1>
+
+      <p class="hero-description">
+        A creative space for digital posters and thoughtful websites.
+        Exploring ideas, playing with visuals and turning imagination
+        into designs that speak.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#posters" class="btn btn-primary">Explore Posters</a>
+        <a href="#websites" class="btn btn-outline">Explore Websites</a>
+      </div>
+
+      <div class="hero-note">
+        <span>✳</span> A little space for creativity
+      </div>
+
+    </div>
+
+    <!-- HOME IMAGE -->
+
+    <div class="hero-image hero-new-image">
+
+      <div class="hero-poster">
+        <img
+          src="https://images.unsplash.com/photo-1791197738079-d25b54cd42dc?auto=format&fit=crop&w=1200&q=85"
+          alt="Graphic design workspace"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="image-caption">
+        <span>POSTERS</span><span>·</span>
+        <span>WEBSITES</span><span>·</span>
+        <span>CREATIVITY</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- DIGITAL POSTERS -->
+
+<section class="section poster-section" id="posters">
+
+  <div class="section-heading">
+    <div class="section-label">A collection of visual ideas</div>
+    <h2>Digital Posters</h2>
+    <p>A little creativity, a lot of stories — explore my poster collection.</p>
+  </div>
+
+  <div class="category-scroll" id="categoryContainer"></div>
+
+  <div class="poster-gallery-area" id="posterGallery">
+
+    <div class="gallery-top">
+      <h3 id="galleryTitle">Poster Collection</h3>
+      <button class="close-gallery" onclick="closeGallery()">Close ✕</button>
+    </div>
+
+    <div class="poster-grid" id="posterGrid"></div>
+
+  </div>
+
+</section>
+
+<!-- WEBSITE CREATIONS -->
+
+<section class="section website-section" id="websites">
+
+  <div class="section-heading">
+    <div class="section-label">Beyond design</div>
+    <h2>Ideas deserve a space online.</h2>
+    <p>Simple and thoughtfully designed websites for your needs.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- PERSONAL WEBSITE -->
+
+    <div class="service-card">
+
+      <div class="service-top">
+        <span class="service-number">01 / PERSONAL</span>
+        <div class="service-icon">✳</div>
+      </div>
+
+      <h3>Personal Websites</h3>
+
+      <p>
+        A personal website to share your work, ideas, achievements,
+        creativity or personal journey — all in one place.
+      </p>
+
+      <ul class="service-features">
+        <li>Personal portfolio websites</li>
+        <li>Student &amp; professional profiles</li>
+        <li>Creative work and achievement showcases</li>
+        <li>Simple and elegant design</li>
+      </ul>
+
+      <a
+        class="service-whatsapp"
+        href="https://wa.me/918075118737?text=Hi%20CreativeFolio!%20I%20am%20interested%20in%20creating%20a%20Personal%20Website.%20I%20would%20like%20to%20discuss%20my%20ideas%20and%20requirements."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Request a Personal Website ↗
+      </a>
+
+    </div>
+
+    <!-- BUSINESS WEBSITE -->
+
+    <div class="service-card">
+
+      <div class="service-top">
+        <span class="service-number">02 / BUSINESS</span>
+        <div class="service-icon">↗</div>
+      </div>
+
+      <h3>Business Websites</h3>
+
+      <p>
+        A simple online presence for businesses, products, services
+        and growing ideas — designed to help people discover what you offer.
+      </p>
+
+      <ul class="service-features">
+        <li>Small business websites</li>
+        <li>Product &amp; service showcases</li>
+        <li>Business information and contact details</li>
+        <li>Clean and customer-friendly design</li>
+      </ul>
+
+      <a
+        class="service-whatsapp"
+        href="https://wa.me/918075118737?text=Hi%20CreativeFolio!%20I%20am%20interested%20in%20creating%20a%20Business%20Website.%20I%20would%20like%20to%20discuss%20my%20business%20and%20website%20requirements."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Request a Business Website ↗
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about-section" id="about">
+
+  <div class="about-decoration">
+    <p>Have an idea,<br>create it.</p>
+  </div>
+
+  <div class="about-text">
+
+    <div class="section-label">A little about this space</div>
+
+    <h2>Creativity, in its own little way.</h2>
+
+    <p>
+      Creative Folio is a personal space where ideas find their way
+      into designs. From digital posters to simple websites, every
+      creation begins with an idea and a little imagination.
+    </p>
+
+    <p>
+      This portfolio brings together my designs, experiments and
+      creative works — made with care, simplicity and love for design.
+    </p>
+
+    <p>Every design has something to say. This is where I let them speak.</p>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+  <div class="section-label">Let's create something</div>
+
+  <h2>Have an idea?</h2>
+
+  <p>
+    Have something in mind? Let's turn your idea into something
+    beautiful. Feel free to connect with me.
+  </p>
+
+  <div class="contact-buttons">
+
+    <!-- WHATSAPP -->
+
+    <a
+      href="https://wa.me/918075118737?text=Hi%20CreativeFolio!%20I%20would%20like%20to%20enquire%20about%20your%20creative%20services."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn whatsapp-button contact-whatsapp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L4 20l.8-3.7a8.5 8.5 0 1 a 15.7-4.5"/>
+        <path d="M8.7 8.3c.3-.6.6-.6.9-.6h.5c.2 0 .4.2.5.5l.6 1.4c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .7.4.7 1.1 1.5 1.9 2.1.6.4 1.1.7 1.4.5l.8-.9c.2-.2.4-.2.7-.1l1.3.6c.3.1.4.3.4.6 0 .4-.2 1-.6 1.3-.4.4-1 .6-1.6.6-.6 0-1.4-.2-2.4-.7-1.1-.5-2.3-1.4-3.3-2.5-1-1.1-1.6-2.2-1.8-3.1-.2-.7-.1-1.3.3-1.7Z"/>
+      </svg>
+      WhatsApp
+    </a>
+
+    <!-- INSTAGRAM -->
+
+    <a
+      href="https://www.instagram.com/_creativefolio/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary"
+    >
+      Instagram ↗
+    </a>
+
+    <!-- PHONE -->
+
+    <a href="tel:+918075118737" class="btn btn-outline">
+      Call Me · +91 80751 18737
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="footer-logo">CreativeFolio</div>
+
+  <p>Have an idea, create it.</p>
+
+  <a
+    href="https://www.instagram.com/_creativefolio/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="footer-instagram"
+  >
+    Instagram ↗
+  </a>
+
+  <p>© 2026 CreativeFolio</p>
+
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+
+<a
+  href="https://wa.me/918075118737?text=Hi%20CreativeFolio!%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20enquire%20about%20your%20creative%20services."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contact CreativeFolio on WhatsApp"
+>
+
+  <span class="whatsapp-float-label">
+    Chat with CreativeFolio
+  </span>
+
+  <span class="whatsapp-float-button">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L4 20l.8-3.7a8.5 8.5 0 1 a 15.7-4.5"/>
+      <path d="M8.7 8.3c.3-.6.6-.6.9-.6h.5c.2 0 .4.2.5.5l.6 1.4c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .7.4.7 1.1 1.5 1.9 2.1.6.4 1.1.7 1.4.5l.8-.9c.2-.2.4-.2.7-.1l1.3.6c.3.1.4.3.4.6 0 .4-.2 1-.6 1.3-.4.4-1 .6-1.6.6-.6 0-1.4-.2-2.4-.7-1.1-.5-2.3-1.4-3.3-2.5-1-1.1-1.6-2.2-1.8-3.1-.2-.7-.1-1.3.3-1.7Z"/>
+    </svg>
+
+  </span>
+
+</a>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+
+  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+
+  <img id="lightboxImage" src="" alt="Enlarged poster">
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* ==================================================
+   POSTER DATA
+================================================== */
+
+const posters = [
+
+  /* EVENTS & CELEBRATIONS */
+
+  {
+    title: "Kalari Graduation Ceremony",
+    file: "images/kalari-graduation-ceremony.jpg",
+    category: "events"
+  },
+
+  {
+    title: "Welcome to Calicut",
+    file: "images/welcome-to-calicut-sports-event.jpg",
+    category: "events"
+  },
+
+  {
+    title: "Gazelia Annual Day",
+    file: "images/gazelia-annual-day.jpg",
+    category: "events"
+  },
+
+  /* CAMPUS & AWARENESS */
+
+  {
+    title: "Insaf Bag Campaign",
+    file: "images/insaf-bag-campaign.jpg",
+    category: "campus"
+  },
+
+  {
+    title: "Green Campaign 01",
+    file: "images/green-campaign-poster-01.jpg",
+    category: "campus"
+  },
+
+  {
+    title: "Public Awareness Poster",
+    file: "images/public-awareness-poster.jpg",
+    category: "campus"
+  },
+
+  {
+    title: "Green Campaign 02",
+    file: "images/green-campaign-poster-02.jpg",
+    category: "campus"
+  },
+
+  {
+    title: "Insaf Bag Promotion",
+    file: "images/insaf-bag-promo.jpg",
+    category: "campus"
+  },
+
+  /* BUSINESS & PRODUCTS */
+
+  {
+    title: "Bella Furniture Green Living Room",
+    file: "images/bella-furniture-green-livingroom.jpg",
+    category: "business"
+  },
+
+  {
+    title: "Bella Furniture Table",
+    file: "images/bella-furniture-table.jpg",
+    category: "business"
+  },
+
+  {
+    title: "Bella Furniture Pink Chair",
+    file: "images/bella-furniture-pink-chair.jpg",
+    category: "business"
+  },
+
+  {
+    title: "Bella Furniture Blue Sofa",
+    file: "images/bella-furniture-blue-sofa.jpg",
+    category: "business"
+  },
+
+  {
+    title: "Bella Furniture Statement",
+    file: "images/bella-furniture-statement.jpg",
+    category: "business"
+  },
+
+  /* COMMUNITY & PUBLIC PROJECTS */
+
+  {
+    title: "Municipality Public Project",
+    file: "images/municipality-public-project-poster.jpg",
+    category: "community"
+  },
+
+  /* CREATIVITY POSTERS */
+
+  {
+    title: "Fathima Fiza Vice Chairperson",
+    file: "images/fathima-fiza-vice-chairperson-promo.jpg",
+    category: "creative"
+  },
+
+  {
+    title: "Rohit Thiruvathira",
+    file: "images/rohit-thiruvathira-promo.jpg",
+    category: "creative"
+  }
+
+];
+
+
+/* ==================================================
+   CATEGORY DATA
+================================================== */
+
+const categories = [
+
+  {
+    id: "events",
+    title: "Events & Celebrations",
+    subtitle: "Moments & occasions"
+  },
+
+  {
+    id: "campus",
+    title: "Campus & Awareness",
+    subtitle: "Messages that matter"
+  },
+
+  {
+    id: "business",
+    title: "Business & Products",
+    subtitle: "Promote with creativity"
+  },
+
+  {
+    id: "community",
+    title: "Community & Public Projects",
+    subtitle: "People & public initiatives"
+  },
+
+  {
+    id: "creative",
+    title: "Creativity Posters",
+    subtitle: "Ideas & imagination"
+  }
+
+];
+
+
+/* ==================================================
+   CREATE CATEGORY CARDS
+================================================== */
+
+function renderCategories() {
+
+  const container = document.getElementById("categoryContainer");
+
+  container.innerHTML = "";
+
+  categories.forEach(category => {
+
+    const categoryPosters = posters.filter(
+      poster => poster.category === category.id
+    );
+
+    const card = document.createElement("button");
+    card.className = "category-card";
+    card.type = "button";
+    card.onclick = () => openCategory(category.id);
+
+    const cover = document.createElement("div");
+    cover.className = "category-cover";
+
+    /* 4 OR MORE POSTERS */
+
+    if (categoryPosters.length >= 4) {
+
+      const collage = document.createElement("div");
+      collage.className = "cover-four";
+
+      categoryPosters.slice(0, 4).forEach(poster => {
+
+        const image = document.createElement("img");
+        image.src = poster.file;
+        image.alt = poster.title;
+
+        collage.appendChild(image);
+
+      });
+
+      cover.appendChild(collage);
+
+    }
+
+    /* 3 POSTERS */
+
+    else if (categoryPosters.length === 3) {
+
+      const collage = document.createElement("div");
+      collage.className = "cover-three";
+
+      categoryPosters.forEach(poster => {
+
+        const image = document.createElement("img");
+        image.src = poster.file;
+        image.alt = poster.title;
+
+        collage.appendChild(image);
+
+      });
+
+      cover.appendChild(collage);
+
+    }
+
+    /* 2 POSTERS */
+
+    else if (categoryPosters.length === 2) {
+
+      const collage = document.createElement("div");
+      collage.className = "cover-two";
+
+      categoryPosters.forEach(poster => {
+
+        const image = document.createElement("img");
+        image.src = poster.file;
+        image.alt = poster.title;
+
+        collage.appendChild(image);
+
+      });
+
+      cover.appendChild(collage);
+
+    }
+
+    /* 1 POSTER */
+
+    else if (categoryPosters.length === 1) {
+
+      const image = document.createElement("img");
+      image.className = "cover-single";
+      image.src = categoryPosters[0].file;
+      image.alt = categoryPosters[0].title;
+
+      cover.appendChild(image);
+
+    }
+
+    /* EMPTY CATEGORY */
+
+    else {
+
+      const empty = document.createElement("div");
+      empty.className = "cover-empty";
+
+      cover.appendChild(empty);
+
+    }
+
+    const title = document.createElement("div");
+    title.className = "category-title";
+    title.textContent = category.title;
+
+    const subtitle = document.createElement("div");
+    subtitle.className = "category-subtitle";
+    subtitle.textContent = category.subtitle;
+
+    card.appendChild(cover);
+    card.appendChild(title);
+    card.appendChild(subtitle);
+
+    container.appendChild(card);
+
+  });
+
+}
+
+
+/* ==================================================
+   OPEN CATEGORY
+================================================== */
+
+function openCategory(category) {
+
+  const gallery = document.getElementById("posterGallery");
+  const grid = document.getElementById("posterGrid");
+  const title = document.getElementById("galleryTitle");
+
+  gallery.classList.add("active");
+
+  const selectedCategory = categories.find(
+    item => item.id === category
+  );
+
+  const filteredPosters = posters.filter(
+    poster => poster.category === category
+  );
+
+  title.textContent = selectedCategory
+    ? selectedCategory.title
+    : "Poster Collection";
+
+  grid.innerHTML = "";
+
+  if (filteredPosters.length === 0) {
+
+    const message = document.createElement("p");
+
+    message.textContent =
+      "Posters will be added to this collection soon.";
+
+    message.style.color = "#777b70";
+    message.style.padding = "25px 0";
+    message.style.gridColumn = "1 / -1";
+
+    grid.appendChild(message);
+
+  }
+
+  filteredPosters.forEach(poster => {
+
+    const item = document.createElement("div");
+    item.className = "poster-item";
+
+    const image = document.createElement("img");
+    image.src = poster.file;
+    image.alt = poster.title;
+    image.loading = "lazy";
+
+    const caption = document.createElement("div");
+    caption.className = "poster-caption";
+    caption.textContent = poster.title;
+
+    item.appendChild(image);
+    item.appendChild(caption);
+
+    item.addEventListener("click", () => {
+      openLightbox(poster.file);
+    });
+
+    grid.appendChild(item);
+
+  });
+
+  gallery.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+}
+
+
+/* CLOSE GALLERY */
+
+function closeGallery() {
+  document.getElementById("posterGallery").classList.remove("active");
+}
+
+
+/* OPEN LIGHTBOX */
+
+function openLightbox(file) {
+
+  const lightbox = document.getElementById("lightbox");
+  const image = document.getElementById("lightboxImage");
+
+  image.src = file;
+
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+
+}
+
+
+/* CLOSE LIGHTBOX */
+
+function closeLightbox(event) {
+
+  if (
+    event &&
+    event.target !== document.getElementById("lightbox") &&
+    !event.target.classList.contains("lightbox-close")
+  ) {
+    return;
+  }
+
+  document.getElementById("lightbox").classList.remove("active");
+  document.body.style.overflow = "auto";
+  document.getElementById("lightboxImage").src = "";
+
+}
+
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+    closeLightbox();
+    closeGallery();
+  }
+
+});
+
+
+/* RENDER CATEGORY CARDS */
+
+renderCategories();
+
+</script>
+
+</body>
+</html>
